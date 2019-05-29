@@ -139,9 +139,18 @@ class RequestHandler(BaseHTTPRequestHandler):
 
         return id
 
+class StoppableServer(HTTPServer):
+    def run(self):
+        try:
+            self.serve_forever()
+        except KeyboardInterrupt:
+            pass
+        finally:
+            self.server_close()
+
 
 def main():
-    with HTTPServer(('', PORT), RequestHandler) as server:
+    with StoppableServer(('', PORT), RequestHandler) as server:
         server.serve_forever()
 
 if __name__ == "__main__":
