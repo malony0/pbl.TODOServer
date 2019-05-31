@@ -1,5 +1,7 @@
 # pbl.TODOServer
 
+[![CircleCI](https://circleci.com/gh/malony0/pbl.TODOServer/tree/master.svg?style=svg)](https://circleci.com/gh/malony0/pbl.TODOServer/tree/master)
+
 PBLのレポート課題: TODO管理サービス用の簡易なHTTPサーバ
 
 ---
