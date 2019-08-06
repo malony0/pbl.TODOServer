@@ -120,7 +120,7 @@ class RequestHandler(BaseHTTPRequestHandler):
     def __validate_event(self, event):
         # 締切とタイトルの存在確認
         event_keys = event.keys()
-        if ((EVENT_KEY_DEADLINE or EVENT_KEY_TITLE) not in event_keys):
+        if ((EVENT_KEY_DEADLINE not in event_keys) or (EVENT_KEY_TITLE not in event_keys)):
             return "invalid event format"
         
         # 日付フォーマットの確認
